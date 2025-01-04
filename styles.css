@@ -1,0 +1,329 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: linear-gradient(45deg, #153d2f, #6c757d);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 290px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    flex: 1;
+    overflow-y: auto;
+    max-width: 1100px;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Toggle Button Styles */
+.toggle-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    background: linear-gradient(45deg, #6c757d, #343a40);
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.toggle-button:hover {
+    transform: scale(1.1);
+}
+
+.toggle-button svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.hidden {
+    transform: translateX(-100%);
+}
+
+/* Centering Container When Sidebar is Hidden */
+.centered-content {
+    margin: 0 auto;
+    max-width: 1100px;
+    transition: margin 0.3s ease-in-out;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    select,
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .output {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .loading-symbol {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    select,
+    button {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .output {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+/* Container Styles */
+.container {
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensures content stretches to full width */
+    justify-content: center;
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    color: #153d2f;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 img {
+    margin-right: 10px;
+    width: 60px;
+    height: auto;
+}
+
+/* Form Element Styles */
+input[type="text"],
+input[type="file"],
+select,
+button {
+    width: 100%;
+    padding: 14px;
+    margin: 14px 0;
+    border-radius: 10px;
+    border: 1px solid #153d2f;
+    font-size: 18px;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease-in-out;
+    display: block;
+    text-align: center; /* Ensures the text is centered */
+    height: 50px; /* Ensures all buttons have the same height */
+}
+
+/* Button Styles */
+button {
+    background: linear-gradient(45deg, #153d2f, #6c757d);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #6c757d, #343a40);
+    transform: translateY(-3px);
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+select:focus {
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.5);
+}
+
+/* Output Container Styles */
+/* Output Container Styles */
+.output {
+    margin-top: 20px;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    max-height: 300px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%; /* Makes sure the width is restricted within the parent container */
+    box-sizing: border-box; /* Prevents overflow by considering padding and border in the width */
+}
+
+.output .difference-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.output .back-button {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background-color: #1b503d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.output.show-difference .back-button {
+    display: block;
+}
+
+.output.show-difference .difference-buttons {
+    display: none;
+}
+
+.back-button:hover {
+    background-color: #6c757d;
+}
+
+#outputText {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Loading Styles */
+.loading {
+    text-align: center;
+    display: none;
+    color: #153d2f;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.loading-symbol {
+    border: 4px solid #153d2f;
+    border-top: 4px solid #d7eef8;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.diff {
+    background-color: #e6f4ff;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Session Item Styles */
+.session-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.session-item:hover {
+    background-color: #153d2f;
+    color: white;
+}
