@@ -213,7 +213,7 @@
 // Function to fetch the compiled speech-to-text data based on session ID
 async function fetchCompiledSpeechToText(sessionId) {
     // Define the URL for the API call using the session ID
-    const url = `https://newsai-by-4sightai.onrender.com/fetch-session/${sessionId}`;
+    const url = `https://foursightai-v2-0.onrender.com/fetch-session/${sessionId}`;
 
     try {
         // Make a GET request to the API
@@ -262,7 +262,7 @@ function hideLoading() {
 // Function to start a new session
 async function startSession() {
     const sessionId = document.getElementById("sessionId").value;
-    const url = "https://newsai-by-4sightai.onrender.com/start-session/";
+    const url = "https://foursightai-v2-0.onrender.com/start-session/";
     const payload = {
         session_id: sessionId,
         language: "te-IN"
@@ -328,7 +328,7 @@ async function uploadAudio() {
 // Function to submit Telugu text to the entry API
 async function submitTeluguText(recordedText) {
     const sessionId = document.getElementById("sessionId").value;
-    const url = "https://newsai-by-4sightai.onrender.com/telugu-text-entry/";
+    const url = "https://foursightai-v2-0.onrender.com/telugu-text-entry/";
     const payload = {
         session_id: sessionId,
         language: recordedText
@@ -365,7 +365,7 @@ async function submitTeluguText(recordedText) {
 // Function to end the session and display compiled text
 async function endSession() {
     const sessionId = document.getElementById("sessionId").value;
-    const url = `https://newsai-by-4sightai.onrender.com/end-session/`;
+    const url = `https://foursightai-v2-0.onrender.com/end-session/`;
 
     try {
         showLoading("Ending session...");
@@ -448,7 +448,7 @@ document.getElementById("showDifference").addEventListener("click", showDifferen
     loadSessions();
 
     async function loadSessions() {
-    const url = "https://newsai-by-4sightai.onrender.com/sessions/"; // Corrected URL
+    const url = "https://foursightai-v2-0.onrender.com/sessions/"; // Corrected URL
 
     try {
         const response = await fetch(url);
@@ -481,7 +481,7 @@ document.getElementById("showDifference").addEventListener("click", showDifferen
 }
 
 async function fetchSessionDetails(sessionId) {
-    const url = `https://newsai-by-4sightai.onrender.com/fetch-session/${sessionId}/`;
+    const url = `https://foursightai-v2-0.onrender.com/fetch-session/${sessionId}/`;
 
     try {
         showLoading("Fetching session details...");
